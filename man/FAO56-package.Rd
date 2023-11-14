@@ -3,7 +3,7 @@
 \docType{package}
 \name{FAO56-package}
 \alias{FAO56-package}
-\title{A package for computating the crop evapotranspiration and evapotranspiration rate
+\title{A package for computing the crop evapotranspiration and evapotranspiration rate
    from the reference surface by FAO Penman-Monteith equation}
 \description{
 FAO56 provides the equations used to calulate the crop evapotranspiration and evapotranspiration rate

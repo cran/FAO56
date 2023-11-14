@@ -53,7 +53,7 @@ ExRad <- function(d_r, omega_s, phi, delta, G_sc = 0.0820) {
 #' @export
 JulDate <- function(date) {
   J <- as.POSIXlt(date, tryFormats = c("%Y-%m-%d", "%Y/%m/%d"))
-  as.numeric(J$yday)
+  as.numeric(J$yday) + 1
 }
 
 ##############################################################################
@@ -223,9 +223,7 @@ SolRad <- function(n = NULL, N =NULL, a_s = 0.25, b_s = 0.5, R_a, T_max = NULL, 
   if(region == 'coast'){k_Rs <- 0.19}
 
   k_Rs * sqrt(T_max - T_min) * R_a
- }
-
-  (a_s + b_s * (n / N)) * R_a
+ }else{(a_s + b_s * (n / N)) * R_a}
 }
 
 ##############################################################################
@@ -258,9 +256,7 @@ CSSRad <- function(a_s = 0.25, b_s = 0.5, elev = NULL, R_a) {
 
  if(!is.null(elev)){
   (0.75 + 2 * 10^(-5) * elev) * R_a
- }
-
-  (a_s + b_s) * R_a
+ }else{(a_s + b_s) * R_a}
 }
 
 ##############################################################################

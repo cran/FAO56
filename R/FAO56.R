@@ -1,4 +1,4 @@
-#' A package for computating the crop evapotranspiration and evapotranspiration rate
+#' A package for computing the crop evapotranspiration and evapotranspiration rate
 #'    from the reference surface by FAO Penman-Monteith equation
 #'
 #' FAO56 provides the equations used to calulate the crop evapotranspiration and evapotranspiration rate

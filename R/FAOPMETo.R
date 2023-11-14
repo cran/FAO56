@@ -11,9 +11,9 @@
 #'    If \code{gamma} is missing, the function needs \code{elev} to compute \code{gamma}.
 #'    If \code{e_s} is missing, the arguments \code{T_min} and \code{T_max} must be present for
 #'    computation of \code{e_s}. If \code{e_a} is missing, one of the arguments \code{T_dew} or 
-#'    \code{T_min} must be present in order to compute {e_a}. If \code{T_dew} is missing and \code{T_min}
+#'    \code{T_min} must be present in order to compute \code{e_a}. If \code{T_dew} is missing and \code{T_min}
 #'    is present, then \code{T_dew} is computed based on the \code{T_min} value. If \code{u_2} is missing,
-#'    the function needs the values of the arguments \code{u_z} and code{z} to compute \code{u_2}.
+#'    the function needs the values of the arguments \code{u_z} and \code{z} to compute \code{u_2}.
 #'
 #' @param T_mean Optional. A numeric scalar that denotes the average temperature [C].
 #' @param T_min Optional. A numeric scalar that denotes the daily minimum temperature [C].
@@ -30,7 +30,7 @@
 #' @param u_2 A numeric scalar that denotes the wind speed at the height 2m above the ground surface [m/s].
 #' @param u_z A numeric scalar that denotes the wind speed at the height \code{z} above the ground surface [m/s].
 #' @param z A numeric scalar that denotes the height above the ground surface where the wind speed has been measured [m].
-#' @param G Optional. A numeric scalar that denotes the wind speed at 2 m height [m/s]. The default is \code{G=0}.
+#' @param G Optional. A numeric scalar that denotes the soil heat flux density [\eqn{MJ/(m^2\times day)}]. The default is \code{G=0}.
 #' @param n Optional. A numeric scalar that denotes actual duration of sunshine [hour]
 #' @param N Optional. A numeric scalar that denotes maximum possible duration of sunshine or daylight hours [hour]
 #' @param a_s Optional. A numeric scalar that denotes regression constant, expressing the fraction ofextraterrestrial radiation
@@ -51,7 +51,7 @@
 #'
 #' @seealso \code{\link{ETo_Hrg}} for Hargreaves Equation.
 #' @export
-ETo_FPM <- function(Delta = SatVP(T_mean), T_mean = (T_min + T_max)/2, R_n = NULL, G = 0,
+ETo_FPM <- function(Delta = SlpSVPC(T_mean), T_mean = (T_min + T_max)/2, R_n = NULL, G = 0,
                              gamma = PsyCon(AtmPres(elev)), u_2 = NULL, u_z = NULL, z = NULL,
                              e_s = MSVP(T_max, T_min), T_dew = NULL, e_a = NULL,
                              T_min = NULL, T_max = NULL, phi_deg = NULL, elev = NULL,

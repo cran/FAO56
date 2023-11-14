@@ -5,7 +5,7 @@
 \title{FAO Penman-Monteith Reference Evapotranspiration (ETo) Equation}
 \usage{
 ETo_FPM(
-  Delta = SatVP(T_mean),
+  Delta = SlpSVPC(T_mean),
   T_mean = (T_min + T_max)/2,
   R_n = NULL,
   G = 0,
@@ -34,7 +34,7 @@ ETo_FPM(
 
 \item{R_n}{Optional. A numeric scalar that denotes the net radiation at the crop surface [\eqn{MJ/(m^2\times day)}].}
 
-\item{G}{Optional. A numeric scalar that denotes the wind speed at 2 m height [m/s]. The default is \code{G=0}.}
+\item{G}{Optional. A numeric scalar that denotes the soil heat flux density [\eqn{MJ/(m^2\times day)}]. The default is \code{G=0}.}
 
 \item{gamma}{Optional. A numeric scalar that denotes the psychrometric constant [kPa/C].}
 
@@ -86,9 +86,9 @@ This is a function to calculate the evapotranspiration rate from the reference s
    If \code{gamma} is missing, the function needs \code{elev} to compute \code{gamma}.
    If \code{e_s} is missing, the arguments \code{T_min} and \code{T_max} must be present for
    computation of \code{e_s}. If \code{e_a} is missing, one of the arguments \code{T_dew} or 
-   \code{T_min} must be present in order to compute {e_a}. If \code{T_dew} is missing and \code{T_min}
+   \code{T_min} must be present in order to compute \code{e_a}. If \code{T_dew} is missing and \code{T_min}
    is present, then \code{T_dew} is computed based on the \code{T_min} value. If \code{u_2} is missing,
-   the function needs the values of the arguments \code{u_z} and code{z} to compute \code{u_2}.
+   the function needs the values of the arguments \code{u_z} and \code{z} to compute \code{u_2}.
 }
 \section{Reference}{
 

@@ -4,17 +4,17 @@ test_that("ExRad calculates the extraterrestrial radiation for daily periods (R_
 #> Test passed
 
 test_that("JulDate calculates the Julian date correctly", {
-  expect_equal(JulDate(date = '2002-05-22'), 141)
+  expect_equal(JulDate(date = '2002-05-22'), 142)
 })
 #> Test passed
 
 test_that("EarSunDis calculates the inverse earth-sun distance (d_r) correctly", {
-  expect_equal(EarSunDis(date = '2005/09/03'), 0.9843266, tolerance = 1e-3)
+  expect_equal(EarSunDis(date = '2005/09/03'), 0.9848288, tolerance = 1e-3)
 })
 #> Test passed
 
 test_that("SolDec calculates the solar declination (delta) correctly", {
-  expect_equal(SolDec(date = '2002-09-03'), 0.1263696, tolerance = 1e-3)
+  expect_equal(SolDec(date = '2002-09-03'), 0.1196551, tolerance = 1e-3)
 })
 #> Test passed
 
